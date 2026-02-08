@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weddings & Events — Celeste Royale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-3 fixed-top">
+      <a class="navbar-brand" href="index.html"><img src="assets/images/logo.svg" alt="Celeste Royale logo" class="logo me-2">Celeste Royale</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="booking.html">Book</a></li></ul></div>
+    </nav>
+
+    <nav aria-label="breadcrumb" class="container mt-5 pt-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html" style="color: var(--gold);">Home</a></li>
+        <li class="breadcrumb-item active">Events</li>
+      </ol>
+    </nav>
+
+    <main class="container py-5">
+      <h1 class="mb-3">Weddings & Events</h1>
+      <p class="text-muted">Host unforgettable weddings, corporate galas, and private celebrations with bespoke planning.</p>
+      <h4 class="mt-4">Wedding Packages</h4>
+      <div class="row g-3">
+        <div class="col-md-4"><div class="card glass p-3 reveal"><h5>Intimate</h5><p>Up to 40 guests, private beach ceremony and champagne dinner.</p></div></div>
+        <div class="col-md-4"><div class="card glass p-3 reveal"><h5>Grand</h5><p>Up to 200 guests, ballroom event with tailored menu and live entertainment.</p></div></div>
+        <div class="col-md-4"><div class="card glass p-3 reveal"><h5>Exclusive Villa</h5><p>Full-villa buyout, personalized butler service, private fireworks.</p></div></div>
+      </div>
+
+      <h4 class="mt-4">Inquiry</h4>
+      <form id="eventInquiry" class="row g-3 glass p-3">
+        <div class="col-md-6">
+          <label for="eventName" class="form-label">Name</label>
+          <input id="eventName" name="name" class="form-control" placeholder="Your name" required>
+        </div>
+        <div class="col-md-6">
+          <label for="eventEmail" class="form-label">Email</label>
+          <input id="eventEmail" name="email" type="email" class="form-control" placeholder="Email" required>
+        </div>
+        <div class="col-12">
+          <label for="eventDetails" class="form-label">Event details</label>
+          <textarea id="eventDetails" name="details" class="form-control" rows="4" placeholder="Event details"></textarea>
+        </div>
+        <div class="col-12 text-end"><button class="btn btn-gold" type="submit">Send Inquiry</button></div>
+      </form>
+    </main>
+
+    <footer class="pt-5 pb-3 text-muted text-center mt-5">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-md-6 text-start">
+            <h6 style="color: var(--gold);">Celeste Royale</h6>
+            <small>Experience unparalleled luxury in a 7-star sanctuary.</small>
+          </div>
+          <div class="col-md-6 text-end">
+            <small><strong>Quick Links:</strong> <a href="booking.html" class="text-muted text-decoration-none">Book</a> | <a href="loyalty.html" class="text-muted text-decoration-none">Loyalty</a> | <a href="faq.html" class="text-muted text-decoration-none">FAQ</a> | <a href="blog.html" class="text-muted text-decoration-none">Blog</a></small>
+          </div>
+        </div>
+        <hr class="bg-secondary">
+        <small>&copy; 2025 Celeste Royale. All rights reserved.</small>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Give the gift of luxury - Celeste Royale Gift Cards.">
+    <title>Gift Cards — Celeste Royale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-3 fixed-top">
+      <a class="navbar-brand d-flex align-items-center" href="index.html"><img src="assets/images/logo.svg" alt="Celeste Royale logo" class="logo me-2"><span class="brand-text">Celeste Royale</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="booking.html">Book</a></li></ul></div>
+    </nav>
+
+    <nav aria-label="breadcrumb" class="container mt-5 pt-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html" style="color: var(--gold);">Home</a></li>
+        <li class="breadcrumb-item active">Gift Cards</li>
+      </ol>
+    </nav>
+
+    <main class="container py-5">
+      <h1 class="mb-3">Celeste Royale Gift Cards</h1>
+      <p class="text-muted mb-5">Give the gift of unforgettable luxury. Our gift cards are the perfect present for travelers who appreciate the finer things.</p>
+
+      <div class="row mb-5">
+        <div class="col-lg-8">
+          <h4 class="mb-4">Select Card Value</h4>
+          <div class="row g-3" id="giftOptions">
+            <div class="col-md-4">
+              <div class="gift-option" data-amount="500">
+                <div class="gift-amount">$500</div>
+                <small class="text-muted">One night in a Deluxe Room</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gift-option" data-amount="1000">
+                <div class="gift-amount">$1,000</div>
+                <small class="text-muted">Two nights in a Suite</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gift-option" data-amount="2000">
+                <div class="gift-amount">$2,000</div>
+                <small class="text-muted">Weekend getaway</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gift-option" data-amount="3000">
+                <div class="gift-amount">$3,000</div>
+                <small class="text-muted">Three nights + dining</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gift-option" data-amount="5000">
+                <div class="gift-amount">$5,000</div>
+                <small class="text-muted">Luxury villa experience</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gift-option" data-amount="custom">
+                <div class="gift-amount">Custom</div>
+                <small class="text-muted">Any amount you choose</small>
+              </div>
+            </div>
+          </div>
+
+          <form id="giftCardForm" class="mt-5">
+            <h5>Delivery Details</h5>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Recipient Name</label>
+                <input class="form-control" type="text" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Recipient Email</label>
+                <input class="form-control" type="email" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Personal Message</label>
+                <textarea class="form-control" rows="3" placeholder="Add a special message..."></textarea>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Your Name</label>
+                <input class="form-control" type="text" required>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="printOption" checked>
+                  <label class="form-check-label" for="printOption">
+                    Send physical card via mail (+$10)
+                  </label>
+                </div>
+              </div>
+              <div class="col-12">
+                <strong>Total: <span id="giftTotal">$500</span></strong>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-gold" type="submit">Purchase Gift Card</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <aside class="col-lg-4">
+          <div class="card glass p-3 mb-3">
+            <h6>Why Give a Gift Card?</h6>
+            <ul class="list-unstyled small">
+              <li>✓ No expiration date</li>
+              <li>✓ Usable toward any service</li>
+              <li>✓ Beautiful presentation</li>
+              <li>✓ Instant delivery option</li>
+              <li>✓ Perfect for any occasion</li>
+            </ul>
+          </div>
+          <div class="card glass p-3">
+            <h6>Redemption Process</h6>
+            <p class="small mb-0">
+              1. Book a stay on our website<br>
+              2. Enter gift card code at checkout<br>
+              3. Enjoy your luxury experience!
+            </p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      const giftOptions = document.getElementById('giftOptions');
+      const giftForm = document.getElementById('giftCardForm');
+      const giftTotal = document.getElementById('giftTotal');
+      let selectedAmount = 500;
+
+      giftOptions.querySelectorAll('.gift-option').forEach(opt => {
+        opt.addEventListener('click', () => {
+          giftOptions.querySelectorAll('.gift-option').forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          selectedAmount = opt.dataset.amount === 'custom' ? 0 : parseInt(opt.dataset.amount);
+          updateTotal();
+        });
+      });
+
+      function updateTotal() {
+        const printFee = document.getElementById('printOption').checked ? 10 : 0;
+        giftTotal.textContent = selectedAmount > 0 ? `$${(selectedAmount + printFee).toLocaleString()}` : 'Custom';
+      }
+
+      document.getElementById('printOption').addEventListener('change', updateTotal);
+
+      giftForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const msg = selectedAmount > 0 ? `Gift card purchase initiated: $${selectedAmount}` : 'Please select a card value.';
+        alert(msg);
+      });
+    </script>
+
+    <footer class="pt-5 pb-3 text-muted text-center mt-5">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-md-6 text-start">
+            <h6 style="color: var(--gold);">Celeste Royale</h6>
+            <small>Experience unparalleled luxury in a 7-star sanctuary.</small>
+          </div>
+          <div class="col-md-6 text-end">
+            <small><strong>Quick Links:</strong> <a href="booking.html" class="text-muted text-decoration-none">Book</a> | <a href="loyalty.html" class="text-muted text-decoration-none">Loyalty</a> | <a href="faq.html" class="text-muted text-decoration-none">FAQ</a> | <a href="blog.html" class="text-muted text-decoration-none">Blog</a></small>
+          </div>
+        </div>
+        <hr class="bg-secondary">
+        <small>&copy; 2025 Celeste Royale. All rights reserved.</small>
+      </div>
+    </footer>
+
+      // Set initial selection
+      giftOptions.querySelector('[data-amount="500"]').classList.add('selected');
+    </script>
+  </body>
+</html>
